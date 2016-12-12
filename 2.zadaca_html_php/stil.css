@@ -1,0 +1,196 @@
+body
+{
+    background-image: url(pozadina.jpg);
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+#pocetna
+{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#promjena
+{
+	background-color: pink;
+}
+
+h1
+{
+    text-align: center;
+    font-size: 80px;
+    text-shadow: 5px 5px #FF0000;
+    background-color: #FFA673;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Aclonica;
+    margin-bottom: 1%;
+    border: solid black;
+    padding: 2%;
+    animation-name: animacija;
+	animation-direction: normal;
+  	animation-duration: 10s;
+  	animation-iteration-count: infinite;
+  	animation-play-state: running;
+  	animation-timing-function: linear;
+  	animation-delay: 0.5s;
+
+}
+@keyframes animacija
+{
+    0% {color: black;}
+    25%  {color: yellow;}
+    50%  {color:white;}
+    75%  {color:blue;}
+    100% {color:green; }
+}
+ul li
+{
+    width: 17%;
+    font-size: 130%;
+    font-family: Aclonica;
+    float: left;
+    background-color: #FFA673;
+    border: solid black;
+    margin-left: 6%;
+    margin-right: 6%;
+    display: inline;
+    margin-bottom: 3%;
+    padding: 1%;
+    text-align: center;
+}
+#lijevi
+{
+    float: left;
+    width: 45%;
+}
+#desni
+{
+    float: right;
+    width: 45%;
+}
+p, dl
+{
+    font-size: 20px;
+    border: solid black;
+    background-color: #FFA673;
+    padding: 2%;
+}
+h2
+{
+    font-size: 30px;
+    font-family:Aclonica;
+    border: solid black;
+    background-color: #FFA673;
+    padding: 3%;
+    margin-bottom: 2px;
+}
+
+pre
+{
+    font-size: 20px;
+    border: solid black;
+    background-color: #FFA673;
+    margin-right: 30%;
+    padding: 1%;
+}
+#slika
+{
+    background-color: #FFA673;
+    margin-right: 40%;
+    border: solid black;
+    padding: 1%;
+}
+#formula
+{
+    margin-bottom:2%;
+    font-family: Courier New;
+}
+
+#images {
+    width: 900px;
+    height: 600px;
+    position: relative;
+    margin: 60px auto;
+    border: #E3F1FA 10px solid;
+}
+#images img{
+    width: 900px;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    left: -100px;
+}
+
+#images img:first-child {
+    left: 0;
+    opacity: 1;    /*zelimo da se na pocetku prikaze prva slika*/
+}
+#slider a {
+    text-decoration: none;
+    background: #E3F1FA;
+    border: 1px solid black;
+    padding: 4px 6px;
+    color: black;
+}
+#slider a:hover {
+    background: #C6E4F2;
+}
+#slider
+{
+    margin-left: 35%;
+}
+#images img{
+                                        /*stack oreder..oni koji imaju veci z index stoje ispred onih s manjim*/
+    opacity: 0;  /*prozirnost*/
+    transition: all 0.3s;
+    -o-transition: all linear 0.5s;
+    -moz-transition: all linear 0.5s;
+    -webkit-transition: all linear 0.5s;
+}
+#images img:target {
+    left: 0;
+    opacity: 1;
+}
+
+#demo img
+{
+    height: 250px;
+    width: 200px;
+}
+
+dl div:first-letter
+{
+    font-size: 30px;
+    font-family: Arial Black;
+}
+dl h3
+{
+    margin:0%;
+}
+#kod_nas
+{
+    border: solid black;
+    background-color:#FFA673;
+    padding: 1%;
+    margin-top:2%;
+}
+#kod_nas p
+{
+    border: none;
+    margin:1%;
+    padding:0%;
+}
+#sale
+{
+        border: solid black;
+        background-color:#FFA673;
+}
+#sale p, #sale dl, #sale h3
+{
+    border: none;
+    padding: 1%;
+     margin:1%;
+}

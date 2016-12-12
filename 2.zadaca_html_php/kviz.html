@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="hr" lang="hr">
+<head>
+    <title>Kviz</title>
+    <link rel="stylesheet" type="text/css" href="stil.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript">
+<!--
+        var polje= new Array(0,0,0,0,0)
+        var score ;
+        function odgovor(val, i)
+        {
+            if(i==0 && val==1) polje[0]=1;
+            if(i==0 && val!=1) polje[0]=0;
+            if(i==1 && val==3) polje[1]=1;
+            if(i==1 && val!=3) polje[1]=0;
+            if(i==2 && val==1) polje[2]=1;
+            if(i==2 && val!=1) polje[2]=0;
+            if(i==3 && val==1) polje[3]=1;
+            if(i==3 && val!=1) polje[3]=0;
+            if(i==4 && val==2) polje[4]=1;
+            if(i==4 && val!=2) polje[4]=0;
+
+        }
+        function rezultat(src, alt)
+        {
+            var ind;
+            score=0;
+            for (ind=0; ind <5; ++ind) score+=polje[ind];
+            /* moramo provjeriti kucice */
+            var broj1=document.getElementById( "broj1" );
+            var br1 = new Number( broj1.value );
+            if(br1==12) ++score;
+            var broj2=document.getElementById( "broj2" );
+            var br2 = new String( broj2.value );
+            if(br2=="sigma") ++score;
+            var broj3=document.getElementById( "broj3" );
+            var br3 = new Number( broj3.value );
+            if(br3==10) ++score;
+            var broj4=document.getElementById( "broj4" );
+            var br4 = new String( broj4.value );
+            if(br4=="Goldbach") ++score;
+            var broj5=document.getElementById( "broj5" );
+            var br5 = new String( broj5.value );
+            if(br5=="Cauchy") ++score;
+            document.getElementById("demo").innerHTML = "Vaš broj točnih odgovora je "+score+"!   ";
+            var img = document.createElement("img");
+            img.src=src;
+            img.alt=alt;
+           document.getElementById("demo").appendChild(img);
+          }
+-->
+    </script>
+</head>
+<body>
+            <form action="kviz.html">
+            <pre>Što će ispisati sljedeći kod?
+            int x, y;
+            x=3;
+            y=x++-2;
+            printf ("%d %d", y, x);
+            <br/>
+            <input type="radio" name="prvi" onclick="odgovor(1,0)" value="1 4"></input> <label>1 4</label>
+            <br/>
+            <input type="radio" name="prvi" onclick="odgovor(2, 0)" value="2 4"></input> <label>2 4</label>
+            <br/>
+            <input type="radio" name="prvi" onclick="odgovor(3, 0)" value="3 1"></input> <label>3 1</label>
+            </pre>
+        <p class="correct">
+            Koliko je poteza potrebno za premjestiti 5 diskova u igri Hanoiskih tornjeva?
+            <br/>
+            <input type="radio" name="drugi"  onclick="odgovor(1,1)" value="24"></input>
+            <label>24</label>
+            <br/>
+            <input type="radio" name="drugi" onclick="odgovor(2,1)" value="30"></input>
+            <label>30</label>
+            <br/>
+            <input type="radio" name="drugi" onclick="odgovor(3,1)" value="31"></input>
+            <label>31</label>
+        </p>
+         <p class="correct">
+            <q>Čovjek je poput razlomka čiji je brojnik ono što jest, a nazivnik ono što misli o sebi.
+                Što je nazivnik veći, razlomak je manji...</q> rekao je:
+            <br/>
+            <input type="radio" name="trece" onclick="odgovor(1,2)" value="Lav Nikolajevič Tolstoj"></input>
+            <label>Lav Nikolajevič Tolstoj</label>
+            <br/>
+            <input type="radio" name="trece"  onclick="odgovor(2,2)" value="Galileo Galilei"></input>
+            <label>Galileo Galilei</label>
+            <br/>
+            <input type="radio" name="trece"  onclick="odgovor(3,2)" value="Fjodor Mihajlovič Dostojevski"></input>
+            <label>Fjodor Mihajlovič Dostojevski</label>
+        </p>
+        <p class="correct">
+            Koja je deseta decimalna znamenka broja &Pi;?
+            <br/>
+            <input type="radio" name="cetvrto" onclick="odgovor(1,3)" value="5"></input>
+            <label>5</label>
+            <br/>
+            <input type="radio" name="cetvrto"  onclick="odgovor(2,3)" value="4"></input>
+            <label>4</label>
+            <br/>
+            <input type="radio" name="cetvrto"  onclick="odgovor(3,3)" value="9"></input>
+            <label>9</label>
+        </p>
+        <p class="correct">
+            Kako definiramo <dfn>neprebrojiv skup</dfn>?
+            <br/>
+            <input type="radio" name="peto" onclick="odgovor(1,4)" value="lose"></input>
+            <label>Skup x je <dfn>neprebrojiv</dfn> ako nije prebrojiv.</label>
+            <br/>
+            <input type="radio" name="peto"  onclick="odgovor(2,4)" value="dobro"></input>
+            <label>Skup x je <dfn>neprebrojiv</dfn> ako je beskonačan i nije prebrojiv.</label>
+            <br/>
+            <input type="radio" name="peto"  onclick="odgovor(3,4)" value="lose1"></input>
+            <label>Skup x je <dfn>neprebrojiv</dfn> ako nije konacan.</label>
+        </p>
+        <p class="correct">
+            Koliko vrhova ima ikosaedar?
+            <br/>
+            <input type="text" id="broj1"></input>
+        </p>
+         <p class="correct">
+            &Sigma; je koje slovo grčkog alfabeta?
+            <br/>
+            <input type="text" id="broj2"></input>
+        </p>
+        <p class="correct">
+            Koji broj je sljedeći u nizu 25,24,22,19,15?
+            <br/>
+            <input type="text" id="broj3"></input>
+        </p>
+       <p class="correct">
+           Tko je smislio hipotezu <q>Svaki se parni prirodni broj veći od 2, može prikazati kao zbroj dva prosta broja!</q>?
+            <br/>
+            <input type="text" id="broj4"></input>
+        </p>
+        <p class="correct">
+          Kako se zove matematičar sa slike?
+          <br/>
+          <img src="Cauchy.jpg" alt="tko sam ja?"></img>
+            <br/>
+            <input type="text" id="broj5"></input>
+        </p>
+        <p id="demo">
+            <button type="button" onclick="rezultat('correct.jpg', 'slika')">REZULTAT</button>
+
+        </p>
+
+    </form>
+</body>
+</html>
